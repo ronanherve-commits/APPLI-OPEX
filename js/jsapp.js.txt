@@ -1,0 +1,2 @@
+// Fichier vide pour futures fonctionnalités
+console.log("PWA Guide Installateur chargé");
