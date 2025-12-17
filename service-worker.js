@@ -1,13 +1,13 @@
-const CACHE_NAME = 'guide-installateur-v2';
+const CACHE_NAME = 'guide-installateur-v3';
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/app.js',
-  '/pages/module1.html',
-  '/pages/module2.html',
-  '/images/icon-192.jpg',
-  '/images/icon-512.jpg'
+  '/APPLI-OPEX/',
+  '/APPLI-OPEX/index.html',
+  '/APPLI-OPEX/css/style.css',
+  '/APPLI-OPEX/js/app.js',
+  '/APPLI-OPEX/pages/module1.html',
+  '/APPLI-OPEX/pages/module2.html',
+  '/APPLI-OPEX/images/icon-192.jpg',
+  '/APPLI-OPEX/images/icon-512.jpg'
 ];
 
 self.addEventListener('install', evt => {
