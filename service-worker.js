@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guide-installateur-v5'; // Change ce numéro à chaque grosse mise à jour
+const CACHE_NAME = 'guide-installateur-v6';
 const FILES_TO_CACHE = [
   '/APPLI-OPEX/',
   '/APPLI-OPEX/index.html',
