@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guide-installateur-v4';
+const CACHE_NAME = 'guide-installateur-v5'; // Change ce numéro à chaque grosse mise à jour
 const FILES_TO_CACHE = [
   '/APPLI-OPEX/',
   '/APPLI-OPEX/index.html',
@@ -35,7 +35,6 @@ self.addEventListener('fetch', evt => {
     caches.match(evt.request).then(resp => {
       if (resp) return resp;
       return fetch(evt.request).catch(() => {
-        // fallback si hors ligne et fichier non trouvé
         if (evt.request.mode === 'navigate') {
           return caches.match('/APPLI-OPEX/index.html');
         }
