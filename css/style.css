@@ -1,27 +1,47 @@
+/* Reset basique */
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 20px;
 }
 
-h1 {
-    color: #0d6efd;
+/* Titres */
+h1 { text-align:center; margin-bottom:30px; color:#2c3e50; font-size:2rem; }
+h2 { color:#34495e; margin-bottom:15px; text-align:center; }
+
+/* Liste modules */
+ul { list-style:none; max-width:400px; margin:0 auto; padding:0; }
+ul li { background-color:#3498db; margin-bottom:15px; padding:15px 20px; border-radius:8px; text-align:center; transition:background-color 0.3s; }
+ul li a { color:#fff; text-decoration:none; font-weight:bold; display:block; }
+ul li:hover { background-color:#2980b9; }
+
+/* Module content */
+.module-content {
+  background-color:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  max-width:600px;
+  margin:20px auto;
+  text-align:center;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+/* Images */
+img { max-width:100%; height:auto; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2); }
 
-li a {
-    display: block;
-    margin: 10px 0;
-    text-decoration: none;
-    color: #0d6efd;
-}
+/* Retour à l'accueil */
+a { color:#3498db; text-decoration:none; font-weight:bold; display:inline-block; margin-top:15px; }
+a:hover { text-decoration:underline; }
 
-a {
-    text-decoration: none;
-    color: #0d6efd;
-    margin: 0 5px;
+/* Footer */
+footer { text-align:center; margin-top:40px; font-size:0.9rem; color:#666; }
+
+/* Responsive */
+@media (max-width:480px) {
+  h1 { font-size:1.5rem; }
+  ul li { padding:12px 15px; }
 }
