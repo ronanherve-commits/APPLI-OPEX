@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guide-installateur-v3';
+const CACHE_NAME = 'guide-installateur-v4';
 const FILES_TO_CACHE = [
   '/APPLI-OPEX/',
   '/APPLI-OPEX/index.html',
@@ -32,6 +32,14 @@ self.addEventListener('activate', evt => {
 
 self.addEventListener('fetch', evt => {
   evt.respondWith(
-    caches.match(evt.request).then(resp => resp || fetch(evt.request))
+    caches.match(evt.request).then(resp => {
+      if (resp) return resp;
+      return fetch(evt.request).catch(() => {
+        // fallback si hors ligne et fichier non trouvé
+        if (evt.request.mode === 'navigate') {
+          return caches.match('/APPLI-OPEX/index.html');
+        }
+      });
+    })
   );
 });
