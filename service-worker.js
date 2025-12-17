@@ -1,11 +1,13 @@
-const CACHE_NAME = 'guide-installateur-v1';
+const CACHE_NAME = 'guide-installateur-v2';
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
   '/css/style.css',
   '/js/app.js',
   '/pages/module1.html',
-  '/pages/module2.html'
+  '/pages/module2.html',
+  '/images/icon-192.jpg',
+  '/images/icon-512.jpg'
 ];
 
 self.addEventListener('install', evt => {
@@ -17,10 +19,12 @@ self.addEventListener('install', evt => {
 
 self.addEventListener('activate', evt => {
   evt.waitUntil(
-    caches.keys().then(keys => 
-      Promise.all(keys.map(key => { 
-        if (key !== CACHE_NAME) return caches.delete(key); 
-      }))
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) return caches.delete(key);
+        })
+      )
     )
   );
   self.clients.claim();
