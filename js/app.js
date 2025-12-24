@@ -1,35 +1,25 @@
 console.log("app.js chargé");
-// Références Firebase Auth
-const auth = firebase.auth();
 
-// Références aux éléments HTML
-const loginDiv = document.getElementById("login");
-const appDiv = document.getElementById("app");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggle-sidebar");
+  const sidebar = document.getElementById("sidebar");
 
-// Fonction de connexion
-function login() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  }
 
-  auth.signInWithEmailAndPassword(email, password)
-    .then(() => console.log("Connecté avec succès"))
-    .catch(error => alert("Erreur de connexion : " + error.message));
-}
+  const loginDiv = document.getElementById("login");
+  const appDiv = document.getElementById("app");
 
-// Fonction de déconnexion
-function logout() {
-  auth.signOut();
-}
-
-// Surveillance de l’état de connexion
-auth.onAuthStateChanged(user => {
-  if (user) {
-    // Utilisateur connecté
+  window.login = function() {
     loginDiv.style.display = "none";
     appDiv.style.display = "block";
-  } else {
-    // Utilisateur non connecté
-    loginDiv.style.display = "block";
+  };
+
+  window.logout = function() {
     appDiv.style.display = "none";
-  }
+    loginDiv.style.display = "block";
+  };
 });

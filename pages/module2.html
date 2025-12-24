@@ -3,16 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 2 - Guide Installateur</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Module 2</title>
+  <base href="/APPLI-OPEX/">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-  <div class="module-content">
-    <h2>Module 2</h2>
-    <p>Voici le contenu du Module 1.</p>
-    <img src="../images/icon-192.jpg" alt="Icône illustrative">
-    <a href="../index.html">← Retour à l'accueil</a>
+
+  <button id="toggle-sidebar">☰ Sommaire</button>
+
+  <div id="sidebar" class="sidebar">
+    <h3>Modules</h3>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="pages/module1.html">Module 1</a></li>
+      <li><a href="pages/module2.html">Module 2</a></li>
+    </ul>
   </div>
+
+  <h1>Module 2</h1>
+  <p>Contenu du module 2...</p>
+  <button onclick="window.location.href='index.html'">Retour à l'accueil</button>
+
 </body>
 </html>
-

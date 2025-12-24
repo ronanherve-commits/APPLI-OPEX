@@ -1,47 +1,197 @@
-/* Reset basique */
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f7f7f7;
-  color: #333;
-  padding: 20px;
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Titres */
-h1 { text-align:center; margin-bottom:30px; color:#2c3e50; font-size:2rem; }
-h2 { color:#34495e; margin-bottom:15px; text-align:center; }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
-/* Liste modules */
-ul { list-style:none; max-width:400px; margin:0 auto; padding:0; }
-ul li { background-color:#3498db; margin-bottom:15px; padding:15px 20px; border-radius:8px; text-align:center; transition:background-color 0.3s; }
-ul li a { color:#fff; text-decoration:none; font-weight:bold; display:block; }
-ul li:hover { background-color:#2980b9; }
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0; /* fermé par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
 
-/* Module content */
-.module-content {
-  background-color:#fff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
-  max-width:600px;
-  margin:20px auto;
-  text-align:center;
+.sidebar.active {
+  width: 250px; /* ouvert sur ordinateur */
+}
+
+.sidebar h3 {
+  color: #fff;
+  padding-left: 16px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  color: #fff;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #575757;
+}
+
+/* Bouton Sommaire */
+#toggle-sidebar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2000; /* toujours au-dessus */
+  font-size: 20px;
+  padding: 10px 15px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#toggle-sidebar:hover {
+  background-color: #0b7dda;
+}
+
+/* Login */
+#login {
+  max-width: 400px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#login h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#login input {
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#login button {
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#login button:hover {
+  background-color: #0b7dda;
+}
+
+/* Application (modules) */
+#app {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+#app ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#app ul li {
+  margin-bottom: 10px;
+}
+
+#app ul li a {
+  text-decoration: none;
+  color: #2196F3;
+  font-size: 18px;
+}
+
+#app ul li a:hover {
+  text-decoration: underline;
+}
+
+#app button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+}
+
+#app button:hover {
+  background-color: #d32f2f;
 }
 
 /* Images */
-img { max-width:100%; height:auto; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2); }
+#app img {
+  margin: 10px;
+  border-radius: 8px;
+}
 
-/* Retour à l'accueil */
-a { color:#3498db; text-decoration:none; font-weight:bold; display:inline-block; margin-top:15px; }
-a:hover { text-decoration:underline; }
+/* Media query pour smartphone */
+@media (max-width: 600px) {
 
-/* Footer */
-footer { text-align:center; margin-top:40px; font-size:0.9rem; color:#666; }
+  #toggle-sidebar {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
 
-/* Responsive */
-@media (max-width:480px) {
-  h1 { font-size:1.5rem; }
-  ul li { padding:12px 15px; }
+  .sidebar.active {
+    width: 200px; /* plus petit sur mobile */
+  }
+
+  #login {
+    margin: 50px 10px;
+    padding: 15px;
+  }
+
+  #login input, #login button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #app {
+    margin: 20px 10px;
+  }
+
+  #app ul li a {
+    font-size: 16px;
+  }
+
+  #app button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  #app img {
+    width: 80px;
+    height: auto;
+  }
 }
