@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guide Installateur</title>
+
+  <!-- Google Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
   <style>
@@ -101,9 +105,13 @@
       box-shadow: none;
       position: relative; /* pour le bandeau absolute */
     }
+
+    /* Typo stylée pour le titre */
     #app .app-container h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
       margin-bottom: 30px;
-      font-size: 2em;
     }
 
     /* ================== BOUTON DECONNEXION EN HAUT DROITE ================== */
@@ -128,7 +136,7 @@
     /* ================== BANDEAU IMAGE ================== */
     .banner-container {
       position: absolute; /* défile avec le contenu */
-      bottom: 0;          /* toujours en bas */
+      bottom: 0;
       left: 0;
       width: 100vw;       /* toute la largeur */
       text-align: left;
@@ -136,8 +144,9 @@
     }
     .banner-container .banner-image {
       width: 100%;
-      height: auto;
-      object-fit: cover;
+      height: 120px;      /* hauteur réduite */
+      max-height: 120px;
+      object-fit: cover;  /* garde proportions et recadre si nécessaire */
     }
 
     /* ================== RESPONSIVE ================== */
@@ -154,7 +163,7 @@
         font-size: 14px;
       }
       .banner-container .banner-image {
-        max-height: 150px;
+        max-height: 100px;
       }
     }
 
