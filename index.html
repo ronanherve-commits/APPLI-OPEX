@@ -105,25 +105,24 @@
       margin-bottom: 30px;
       font-size: 2em;
     }
-    #app .modules-list {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 30px;
-    }
-    #app .modules-list li {
-      margin-bottom: 15px;
-    }
-    #app .modules-list li a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #2196F3;
-      padding: 8px 12px;
+
+    /* ================== BOUTON DECONNEXION EN HAUT DROITE ================== */
+    #app .logout-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
       border-radius: 5px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 1100; /* devant sidebar */
       transition: 0.2s;
     }
-    #app .modules-list li a:hover {
-      background-color: #e0f0ff;
-      text-decoration: underline;
+    #app .logout-btn:hover {
+      background-color: #d32f2f;
     }
 
     /* ================== BANDEAU IMAGE ================== */
@@ -141,21 +140,6 @@
       object-fit: cover;
     }
 
-    /* ================== BOUTON DECONNEXION ================== */
-    #app .logout-btn {
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 5px;
-      background-color: #f44336;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: 0.2s;
-      margin-top: 20px;
-      position: relative; /* devant le bandeau */
-      z-index: 1;
-    }
-
     /* ================== RESPONSIVE ================== */
     @media (max-width: 600px) {
       .sidebar.active {
@@ -165,16 +149,12 @@
         margin-left: 170px;
         padding: 20px;
       }
-      #app .modules-list li a {
-        font-size: 16px;
-        padding: 6px 10px;
+      #app .logout-btn {
+        padding: 10px 15px;
+        font-size: 14px;
       }
       .banner-container .banner-image {
         max-height: 150px;
-      }
-      #app .logout-btn {
-        padding: 10px 20px;
-        font-size: 14px;
       }
     }
 
@@ -208,13 +188,11 @@
   <!-- Contenu principal -->
   <div class="app-container">
     <h1>Guide Installateur</h1>
-    <ul class="modules-list">
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
-    </ul>
-
-    <button class="logout-btn" onclick="logout()">Déconnexion</button>
+    <!-- Liens modules supprimés du centre -->
   </div>
+
+  <!-- Bouton Déconnexion -->
+  <button class="logout-btn" onclick="logout()">Déconnexion</button>
 
   <!-- Bandeau image défilant en bas -->
   <div class="banner-container">
