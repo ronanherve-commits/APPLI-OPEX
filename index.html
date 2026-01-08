@@ -12,40 +12,49 @@
   VERSION TEST 999
 </div>
 
-  <!-- Bouton Sommaire -->
+<!-- Panneau latéral -->
+<div id="sidebar" class="sidebar">
+  <h3>Modules</h3>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="pages/module1.html">Module 1</a></li>
+    <li><a href="pages/module2.html">Module 2</a></li>
+  </ul>
+</div>
+
+<!-- Écran de connexion -->
+<div id="login">
+  <h2>Connexion</h2>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Mot de passe">
+  <button onclick="login()">Se connecter</button>
+</div>
+
+<!-- Application (modules) -->
+<div id="app" style="display:none;">
+  <!-- Bouton Sommaire visible uniquement après connexion -->
   <button id="toggle-sidebar">☰ Sommaire</button>
 
-  <!-- Panneau latéral -->
-  <div id="sidebar" class="sidebar">
-    <h3>Modules</h3>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
-    </ul>
+  <h1>Guide Installateur</h1>
+  <ul>
+    <li><a href="pages/module1.html">Module 1</a></li>
+    <li><a href="pages/module2.html">Module 2</a></li>
+  </ul>
+  <div>
+    <img src="images/icon-192.jpg" alt="Icon 192" width="64">
+    <img src="images/icon-512.jpg" alt="Icon 512" width="128">
   </div>
+  <button onclick="logout()">Déconnexion</button>
+</div>
 
-  <!-- Écran de connexion -->
-  <div id="login">
-    <h2>Connexion</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Mot de passe">
-    <button onclick="login()">Se connecter</button>
-  </div>
-
-  <!-- Application (modules) -->
-  <div id="app" style="display:none;">
-    <h1>Guide Installateur</h1>
-    <ul>
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
-    </ul>
-    <div>
-      <img src="images/icon-192.jpg" alt="Icon 192" width="64">
-      <img src="images/icon-512.jpg" alt="Icon 512" width="128">
-    </div>
-    <button onclick="logout()">Déconnexion</button>
-  </div>
+<!-- Enregistrement Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('Service Worker: Registered', reg))
+    .catch(err => console.log('Service Worker: Error', err));
+}
+</script>
 
 </body>
 </html>
