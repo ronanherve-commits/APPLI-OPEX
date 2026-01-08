@@ -67,7 +67,7 @@
       z-index: 1000;
     }
     .sidebar.active {
-      width: 250px;
+      width: 200px; /* réduit la largeur desktop */
     }
     .sidebar h3 {
       color: #fff;
@@ -91,7 +91,7 @@
 
     /* ================== SCREEN D’ACCUEIL ================== */
     #app .app-container {
-      margin-left: 260px; /* laisse place à la sidebar */
+      margin-left: 210px; /* laisse place à la sidebar + petit espace */
       max-width: 900px;
       padding: 25px;
       background-color: #fff;
@@ -126,15 +126,14 @@
 
     /* ================== BANDEAU IMAGE ================== */
     .banner-container {
-      width: 100%;
-      margin-top: 30px;
+      width: 100vw;       /* toute la largeur de la fenêtre */
       text-align: center;
+      margin-top: 20px;
     }
     .banner-container .banner-image {
       width: 100%;
-      max-height: 200px;
+      height: auto;
       object-fit: cover;
-      border-radius: 8px;
     }
 
     /* ================== BOUTON DECONNEXION ================== */
@@ -156,10 +155,10 @@
     /* ================== RESPONSIVE ================== */
     @media (max-width: 600px) {
       .sidebar.active {
-        width: 200px;
+        width: 160px;  /* moins large sur mobile */
       }
       #app .app-container {
-        margin-left: 210px;
+        margin-left: 170px;
         padding: 20px;
       }
       #app .modules-list li a {
@@ -202,6 +201,7 @@
     </ul>
   </div>
 
+  <!-- Contenu principal -->
   <div class="app-container">
     <h1>Guide Installateur</h1>
     <ul class="modules-list">
@@ -209,12 +209,12 @@
       <li><a href="pages/module2.html">Module 2</a></li>
     </ul>
 
-    <!-- Bandeau image -->
-    <div class="banner-container">
-      <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
-    </div>
-
     <button class="logout-btn" onclick="logout()">Déconnexion</button>
+  </div>
+
+  <!-- Bandeau image pleine largeur -->
+  <div class="banner-container">
+    <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
   </div>
 </div>
 
