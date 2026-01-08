@@ -123,15 +123,21 @@
       background-color: #e0f0ff;
       text-decoration: underline;
     }
-    #app .icons-container {
-      margin-bottom: 30px;
+
+    /* ================== BANDEAU IMAGE ================== */
+    .banner-container {
+      width: 100%;
+      margin-top: 30px;
+      text-align: center;
     }
-    #app .icons-container img {
-      width: 64px;
-      height: 64px;
-      margin: 0 10px;
+    .banner-container .banner-image {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
       border-radius: 8px;
     }
+
+    /* ================== BOUTON DECONNEXION ================== */
     #app .logout-btn {
       padding: 12px 25px;
       font-size: 16px;
@@ -141,6 +147,7 @@
       border: none;
       cursor: pointer;
       transition: 0.2s;
+      margin-top: 20px;
     }
     #app .logout-btn:hover {
       background-color: #d32f2f;
@@ -159,9 +166,8 @@
         font-size: 16px;
         padding: 6px 10px;
       }
-      #app .icons-container img {
-        width: 50px;
-        height: 50px;
+      .banner-container .banner-image {
+        max-height: 150px;
       }
       #app .logout-btn {
         padding: 10px 20px;
@@ -203,9 +209,9 @@
       <li><a href="pages/module2.html">Module 2</a></li>
     </ul>
 
-    <div class="icons-container">
-      <img src="images/icon-192.jpg" alt="Icon 192">
-      <img src="images/icon-512.jpg" alt="Icon 512">
+    <!-- Bandeau image -->
+    <div class="banner-container">
+      <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
     </div>
 
     <button class="logout-btn" onclick="logout()">Déconnexion</button>
