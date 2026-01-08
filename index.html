@@ -6,23 +6,177 @@
   <title>Guide Installateur</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
+  <style>
+    /* ================== RESET ET BASE ================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* ================== SCREEN DE CONNEXION ================== */
+    #login {
+      max-width: 400px;
+      margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #login h2 {
+      margin-bottom: 20px;
+    }
+    #login input {
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #login button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #login button:hover {
+      background-color: #0b7dda;
+    }
+
+    /* ================== SIDEBAR FIXE ================== */
+    .sidebar {
+      height: 100%;
+      width: 0; /* cachée par défaut pour modules */
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+    .sidebar.active {
+      width: 250px;
+    }
+    .sidebar h3 {
+      color: #fff;
+      padding-left: 16px;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li a {
+      display: block;
+      color: #fff;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .sidebar ul li a:hover {
+      background-color: #575757;
+    }
+
+    /* ================== SCREEN D’ACCUEIL ================== */
+    #app .app-container {
+      margin-left: 260px; /* laisse place à la sidebar */
+      max-width: 900px;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #app .app-container h1 {
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    #app .modules-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+    #app .modules-list li {
+      margin-bottom: 15px;
+    }
+    #app .modules-list li a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #2196F3;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+    #app .modules-list li a:hover {
+      background-color: #e0f0ff;
+      text-decoration: underline;
+    }
+    #app .icons-container {
+      margin-bottom: 30px;
+    }
+    #app .icons-container img {
+      width: 64px;
+      height: 64px;
+      margin: 0 10px;
+      border-radius: 8px;
+    }
+    #app .logout-btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #app .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    /* ================== RESPONSIVE ================== */
+    @media (max-width: 600px) {
+      .sidebar.active {
+        width: 200px;
+      }
+      #app .app-container {
+        margin-left: 210px;
+        padding: 20px;
+      }
+      #app .modules-list li a {
+        font-size: 16px;
+        padding: 6px 10px;
+      }
+      #app .icons-container img {
+        width: 50px;
+        height: 50px;
+      }
+      #app .logout-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+  </style>
 </head>
 <body>
 <div style="background:red;color:white;padding:10px;text-align:center;font-size:20px;">
   VERSION TEST 999
 </div>
 
-<!-- Panneau latéral -->
-<div id="sidebar" class="sidebar">
-  <h3>Modules</h3>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="pages/module1.html">Module 1</a></li>
-    <li><a href="pages/module2.html">Module 2</a></li>
-  </ul>
-</div>
-
-<!-- Écran de connexion -->
+<!-- ÉCRAN DE CONNEXION -->
 <div id="login">
   <h2>Connexion</h2>
   <input type="email" id="email" placeholder="Email">
@@ -30,21 +184,32 @@
   <button onclick="login()">Se connecter</button>
 </div>
 
-<!-- Application (modules) -->
+<!-- ÉCRAN D’ACCUEIL APRÈS CONNEXION -->
 <div id="app" style="display:none;">
-  <!-- Bouton Sommaire visible uniquement après connexion -->
-  <button id="toggle-sidebar">☰ Sommaire</button>
-
-  <h1>Guide Installateur</h1>
-  <ul>
-    <li><a href="pages/module1.html">Module 1</a></li>
-    <li><a href="pages/module2.html">Module 2</a></li>
-  </ul>
-  <div>
-    <img src="images/icon-192.jpg" alt="Icon 192" width="64">
-    <img src="images/icon-512.jpg" alt="Icon 512" width="128">
+  <!-- Sidebar fixe -->
+  <div id="sidebar" class="sidebar active">
+    <h3>Modules</h3>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="pages/module1.html">Module 1</a></li>
+      <li><a href="pages/module2.html">Module 2</a></li>
+    </ul>
   </div>
-  <button onclick="logout()">Déconnexion</button>
+
+  <div class="app-container">
+    <h1>Guide Installateur</h1>
+    <ul class="modules-list">
+      <li><a href="pages/module1.html">Module 1</a></li>
+      <li><a href="pages/module2.html">Module 2</a></li>
+    </ul>
+
+    <div class="icons-container">
+      <img src="images/icon-192.jpg" alt="Icon 192">
+      <img src="images/icon-512.jpg" alt="Icon 512">
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Déconnexion</button>
+  </div>
 </div>
 
 <!-- Enregistrement Service Worker -->
@@ -55,6 +220,5 @@ if ('serviceWorker' in navigator) {
     .catch(err => console.log('Service Worker: Error', err));
 }
 </script>
-
 </body>
 </html>
