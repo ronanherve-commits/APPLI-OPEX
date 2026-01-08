@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       min-height: 100vh;
-      position: relative; /* pour le bandeau position absolute */
+      position: relative; /* pour le bandeau absolute */
     }
 
     /* ================== SCREEN DE CONNEXION ================== */
@@ -94,13 +94,12 @@
     /* ================== SCREEN D’ACCUEIL ================== */
     #app .app-container {
       margin-left: 210px; /* laisse place à la sidebar + petit espace */
-      max-width: 900px;
       padding: 25px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
-      position: relative; /* pour bandeau absolute */
+      background-color: transparent; /* plus de carré blanc */
+      border-radius: 0;
+      box-shadow: none;
+      position: relative; /* pour le bandeau absolute */
     }
     #app .app-container h1 {
       margin-bottom: 30px;
@@ -130,7 +129,7 @@
     /* ================== BANDEAU IMAGE ================== */
     .banner-container {
       position: absolute; /* défile avec le contenu */
-      bottom: 0;          /* toujours en bas du body */
+      bottom: 0;          /* toujours en bas */
       left: 0;
       width: 100vw;       /* toute la largeur */
       text-align: left;
