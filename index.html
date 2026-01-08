@@ -16,6 +16,8 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
+      min-height: 100vh;
+      position: relative; /* pour le bandeau position absolute */
     }
 
     /* ================== SCREEN DE CONNEXION ================== */
@@ -67,7 +69,7 @@
       z-index: 1000;
     }
     .sidebar.active {
-      width: 200px; /* réduit la largeur desktop */
+      width: 200px; /* réduit desktop */
     }
     .sidebar h3 {
       color: #fff;
@@ -98,6 +100,7 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
+      position: relative; /* pour bandeau absolute */
     }
     #app .app-container h1 {
       margin-bottom: 30px;
@@ -126,9 +129,12 @@
 
     /* ================== BANDEAU IMAGE ================== */
     .banner-container {
-      width: 100vw;       /* toute la largeur de la fenêtre */
-      text-align: center;
-      margin-top: 20px;
+      position: absolute; /* défile avec le contenu */
+      bottom: 0;          /* toujours en bas du body */
+      left: 0;
+      width: 100vw;       /* toute la largeur */
+      text-align: left;
+      z-index: 0;          /* derrière le contenu */
     }
     .banner-container .banner-image {
       width: 100%;
@@ -147,15 +153,14 @@
       cursor: pointer;
       transition: 0.2s;
       margin-top: 20px;
-    }
-    #app .logout-btn:hover {
-      background-color: #d32f2f;
+      position: relative; /* devant le bandeau */
+      z-index: 1;
     }
 
     /* ================== RESPONSIVE ================== */
     @media (max-width: 600px) {
       .sidebar.active {
-        width: 160px;  /* moins large sur mobile */
+        width: 160px;
       }
       #app .app-container {
         margin-left: 170px;
@@ -212,7 +217,7 @@
     <button class="logout-btn" onclick="logout()">Déconnexion</button>
   </div>
 
-  <!-- Bandeau image pleine largeur -->
+  <!-- Bandeau image défilant en bas -->
   <div class="banner-container">
     <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
   </div>
