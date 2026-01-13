@@ -5,26 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guide Installateur</title>
 
-  <!-- Google Font Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
+
   <style>
-    /* ================== RESET ET BASE ================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ===== RESET ET BASE ===== */
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d1a33;
+      color: #fff;
       min-height: 100vh;
-      position: relative; /* pour le bandeau absolute */
+      position: relative;
+      margin: 0;
     }
 
-    /* ================== SCREEN DE CONNEXION ================== */
+    /* ===== ÉCRAN DE CONNEXION ===== */
     #login {
       max-width: 400px;
       margin: 100px auto;
@@ -36,9 +35,7 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       text-align: center;
     }
-    #login h2 {
-      margin-bottom: 20px;
-    }
+    #login h2 { margin-bottom: 20px; }
     #login input {
       padding: 12px;
       margin-bottom: 15px;
@@ -55,118 +52,109 @@
       border: none;
       cursor: pointer;
     }
-    #login button:hover {
-      background-color: #0b7dda;
-    }
+    #login button:hover { background-color: #0b7dda; }
 
-    /* ================== SIDEBAR FIXE ================== */
+    /* ===== SIDEBAR FIN ET PROFESSIONNEL ===== */
     .sidebar {
       height: 100%;
-      width: 0; /* cachée par défaut pour modules */
+      width: 180px;
       position: fixed;
       top: 0;
       left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.3s;
+      background-color: #00264d;
       padding-top: 60px;
       z-index: 1000;
-    }
-    .sidebar.active {
-      width: 200px; /* réduit desktop */
+      display: flex;
+      flex-direction: column;
+      border-right: 2px solid #3399ff;
     }
     .sidebar h3 {
       color: #fff;
-      padding-left: 16px;
+      padding-left: 15px;
       margin-bottom: 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
     }
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-    }
+    .sidebar ul { list-style: none; padding-left: 0; }
+    .sidebar ul li { margin-bottom: 10px; }
     .sidebar ul li a {
       display: block;
       color: #fff;
-      padding: 10px 16px;
+      padding: 10px 15px;
+      font-size: 15px;
       text-decoration: none;
-      font-size: 16px;
+      border-radius: 3px;
+      transition: 0.2s;
     }
+    /* ===== HOVER AMÉLIORÉ ===== */
     .sidebar ul li a:hover {
-      background-color: #575757;
-    }
-
-    /* ================== SCREEN D’ACCUEIL ================== */
-    #app .app-container {
-      margin-left: 210px; /* laisse place à la sidebar + petit espace */
-      padding: 25px;
-      text-align: center;
-      background-color: transparent; /* plus de carré blanc */
-      border-radius: 0;
-      box-shadow: none;
-      position: relative; /* pour le bandeau absolute */
-    }
-
-    /* Typo stylée pour le titre */
-    #app .app-container h1 {
-      font-family: 'Poppins', sans-serif;
+      background-color: #3399ff;                 /* bleu clair */
+      color: #ffffff;                            /* texte blanc lisible */
       font-weight: 600;
-      font-size: 2.5em;
-      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
-    /* ================== BOUTON DECONNEXION EN HAUT DROITE ================== */
+    /* ===== CONTENU PRINCIPAL ===== */
+    #app .app-container {
+      position: relative;
+      z-index: 10;
+      margin-left: 200px;
+      padding: 50px 30px;
+      text-align: center;
+      background-color: rgba(51,153,255,0.15);
+      border-radius: 10px;
+      max-width: 900px;
+    }
+    #app .app-container h1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 3em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      margin: 20px 0;
+      padding: 10px 0;
+    }
+
+    /* ===== BOUTON DECONNEXION ===== */
     #app .logout-btn {
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
+      padding: 10px 18px;
+      font-size: 15px;
+      border-radius: 4px;
       background-color: #f44336;
       color: white;
       border: none;
       cursor: pointer;
-      z-index: 1100; /* devant sidebar */
-      transition: 0.2s;
+      z-index: 1100;
     }
-    #app .logout-btn:hover {
-      background-color: #d32f2f;
-    }
+    #app .logout-btn:hover { background-color: #d32f2f; }
 
-    /* ================== BANDEAU IMAGE ================== */
+    /* ===== BANDEAU BAS ===== */
     .banner-container {
-      position: absolute; /* défile avec le contenu */
+      position: absolute;
       bottom: 0;
       left: 0;
-      width: 100vw;       /* toute la largeur */
-      text-align: left;
-      z-index: 0;          /* derrière le contenu */
+      width: 100%;
+      text-align: center;
+      z-index: 0;
+      opacity: 0.85;
     }
     .banner-container .banner-image {
       width: 100%;
-      height: 120px;      /* hauteur réduite */
-      max-height: 120px;
-      object-fit: cover;  /* garde proportions et recadre si nécessaire */
+      height: auto;
+      display: block;
     }
 
-    /* ================== RESPONSIVE ================== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
-      .sidebar.active {
-        width: 160px;
-      }
-      #app .app-container {
-        margin-left: 170px;
-        padding: 20px;
-      }
-      #app .logout-btn {
-        padding: 10px 15px;
-        font-size: 14px;
-      }
-      .banner-container .banner-image {
-        max-height: 100px;
-      }
+      #app .app-container { margin-left: 160px; padding: 20px; }
+      #app .logout-btn { padding: 8px 12px; font-size: 14px; }
     }
-
   </style>
 </head>
 <body>
@@ -185,8 +173,8 @@
 <!-- ÉCRAN D’ACCUEIL APRÈS CONNEXION -->
 <div id="app" style="display:none;">
   <!-- Sidebar fixe -->
-  <div id="sidebar" class="sidebar active">
-    <h3>Modules</h3>
+  <div id="sidebar" class="sidebar">
+    <h3>SOMMAIRE</h3>
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="pages/module1.html">Module 1</a></li>
@@ -196,20 +184,19 @@
 
   <!-- Contenu principal -->
   <div class="app-container">
-    <h1>Guide Installateur</h1>
-    <!-- Liens modules supprimés du centre -->
+    <h1>GUIDE INSTALLATEUR / METTEUR EN ROUTE</h1>
   </div>
 
   <!-- Bouton Déconnexion -->
   <button class="logout-btn" onclick="logout()">Déconnexion</button>
 
-  <!-- Bandeau image défilant en bas -->
+  <!-- Bandeau bas -->
   <div class="banner-container">
     <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
   </div>
 </div>
 
-<!-- Enregistrement Service Worker -->
+<!-- Service Worker -->
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
