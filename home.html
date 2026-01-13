@@ -10,8 +10,81 @@
 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
+
+  <style>
+    /* ===== CONTENU PRINCIPAL ===== */
+    #app .app-container {
+      position: relative;
+      z-index: 10;
+      margin-left: 200px;
+      padding: 50px 30px;
+      text-align: center;
+      background-color: rgba(51,153,255,0.15);
+      border-radius: 10px;
+      max-width: 900px;
+    }
+    #app .app-container h1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 3em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      margin: 20px 0;
+      padding: 10px 0;
+    }
+
+    /* ===== BOUTON DECONNEXION ===== */
+    #app .logout-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 18px;
+      font-size: 15px;
+      border-radius: 4px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    #app .logout-btn:hover { background-color: #d32f2f; }
+
+    /* ===== BANDEAU BAS ===== */
+    .banner-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 0;
+      opacity: 0.85;
+    }
+    .banner-container .banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      #app .app-container {
+        margin-left: 160px;
+        padding: 20px 15px;
+      }
+      #app .app-container h1 {
+        font-size: 1.8em;
+        padding: 5px 0;
+      }
+      #app .logout-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
+
 <!-- Sidebar fixe -->
 <div id="sidebar" class="sidebar">
   <h3>SOMMAIRE</h3>
@@ -36,5 +109,6 @@
     <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
   </div>
 </div>
+
 </body>
 </html>
