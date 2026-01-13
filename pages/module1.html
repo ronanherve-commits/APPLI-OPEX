@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 1</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js" defer></script>
+  <title>Documents applicables</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
 </head>
 <body>
 
-  <button id="toggle-sidebar">☰ Sommaire</button>
-
+  <!-- Sidebar fixe -->
   <div id="sidebar" class="sidebar">
-    <h3>Modules</h3>
+    <h3>SOMMAIRE</h3>
     <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="module1.html" class="active">Documents applicables</a></li>
+      <li><a href="module2.html">Module 2</a></li>
     </ul>
   </div>
 
-  <h1>Module 1</h1>
-  <p>Contenu du module 1...</p>
-  <button onclick="window.location.href='index.html'">Retour à l'accueil</button>
+  <!-- Contenu principal -->
+  <div class="app-container">
+    <h1>Documents applicables</h1>
+    <ul class="documents-list">
+      <li><a href="../docs-chantier/01-Fiche QR Codes.pdf" target="_blank">01 - Fiche QR Codes</a></li>
+      <li><a href="../docs-chantier/02-PROCES VERBAL DE RECEPTION DE TRAVAUX V6.pdf" target="_blank">02 - Procès verbal de réception de travaux V6</a></li>
+      <li><a href="../docs-chantier/03-CheckList-FindeMontageCâblage_indA.pdf" target="_blank">03 - CheckList Fin de Montage/Câblage</a></li>
+      <li><a href="../docs-chantier/04-CheckList-FinDeSemaineDeChantier.pdf" target="_blank">04 - CheckList Fin de semaine de chantier</a></li>
+      <li><a href="../docs-chantier/05-Feuille d'intervention-V1- à signé par le client.pdf" target="_blank">05 - Feuille d’intervention à signer par le client</a></li>
+      <li><a href="../docs-chantier/06-Feuille sous-traitant-V1.pdf" target="_blank">06 - Feuille sous-traitant V1</a></li>
+      <li><a href="../docs-chantier/07-Formation Maintenance-V1.pdf" target="_blank">07 - Formation Maintenance V1</a></li>
+      <li><a href="../docs-chantier/08-Formation opérateurs-V1.pdf" target="_blank">08 - Formation opérateurs V1</a></li>
+      <li><a href="../docs-chantier/09-Forfait & Heures Supp-V17.pdf" target="_blank">09 - Forfait & Heures Supplémentaires V17</a></li>
+      <li><a href="../docs-chantier/10-ORDRE DE MISSION V3.pdf" target="_blank">10 - Ordre de mission V3</a></li>
+    </ul>
+  </div>
+
+  <!-- Bouton Déconnexion -->
+  <button class="logout-btn" onclick="logout()">Déconnexion</button>
 
 </body>
 </html>

@@ -1,9 +1,13 @@
 /* ===== RESET ET BASE ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #0d1a33;
+  background-color: #0d1a33; /* bleu foncé */
   color: #fff;
   min-height: 100vh;
   position: relative;
@@ -22,7 +26,9 @@ body {
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
-#login h2 { margin-bottom: 20px; }
+#login h2 {
+  margin-bottom: 20px;
+}
 #login input {
   padding: 12px;
   margin-bottom: 15px;
@@ -39,12 +45,14 @@ body {
   border: none;
   cursor: pointer;
 }
-#login button:hover { background-color: #0b7dda; }
+#login button:hover {
+  background-color: #0b7dda;
+}
 
-/* ===== SIDEBAR ===== */
+/* ===== SIDEBAR FIXE ET PROFESSIONNEL ===== */
 .sidebar {
   height: 100%;
-  width: 200px;
+  width: 180px;
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +63,7 @@ body {
   flex-direction: column;
   border-right: 2px solid #3399ff;
 }
+
 .sidebar h3 {
   color: #fff;
   padding-left: 15px;
@@ -64,8 +73,16 @@ body {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px;
 }
-.sidebar ul { list-style: none; padding-left: 0; }
-.sidebar ul li { margin-bottom: 10px; }
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
 .sidebar ul li a {
   display: block;
   color: #fff;
@@ -75,9 +92,14 @@ body {
   border-radius: 3px;
   transition: 0.2s;
 }
+
+.sidebar ul li a.active {
+  background-color: #3399ff; /* bleu clair actif */
+}
+
 .sidebar ul li a:hover {
-  background-color: #3399ff;
-  color: #ffffff;
+  background-color: #3399ff;       /* bleu clair */
+  color: #ffffff;                  /* texte blanc lisible */
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
@@ -93,10 +115,11 @@ body {
   border-radius: 10px;
   max-width: 900px;
 }
+
 #app .app-container h1 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
-  font-size: 3em;
+  font-size: 2.5em;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
@@ -118,11 +141,13 @@ body {
   cursor: pointer;
   z-index: 1100;
 }
-#app .logout-btn:hover { background-color: #d32f2f; }
+#app .logout-btn:hover {
+  background-color: #d32f2f;
+}
 
 /* ===== BANDEAU BAS ===== */
 .banner-container {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -136,38 +161,45 @@ body {
   display: block;
 }
 
+/* ===== LISTE DES DOCUMENTS ===== */
+.documents-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.documents-list li {
+  margin-bottom: 15px;
+}
+
+.documents-list li a {
+  font-size: 18px;
+  color: #2196F3;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.documents-list li a:hover {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
-  /* Contenu principal plus étroit */
   #app .app-container {
     margin-left: 160px;
     padding: 20px;
   }
-
-  /* Titre plus petit */
-  #app .app-container h1 {
-    font-size: 2em;
-    padding: 5px 0;
-  }
-
-  /* Bouton déconnexion plus petit */
   #app .logout-btn {
     padding: 8px 12px;
     font-size: 14px;
   }
-
-  /* Bandeau bas responsive */
-  .banner-container {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 0;
+  #login {
+    margin: 50px 10px;
+    padding: 20px;
   }
-  .banner-container .banner-image {
-    width: 100%;
-    height: auto;
+  #login input, #login button {
+    font-size: 14px;
+    padding: 10px;
   }
-
-  /* Sidebar plus étroite */
-  .sidebar { width: 160px; }
 }
