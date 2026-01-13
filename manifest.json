@@ -6,8 +6,15 @@
   "background_color": "#0d1a33",
   "theme_color": "#0d1a33",
   "icons": [
-    { "src": "/APPLI-OPEX/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/APPLI-OPEX/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/APPLI-OPEX/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/APPLI-OPEX/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
-
