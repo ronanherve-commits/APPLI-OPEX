@@ -4,25 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Module 2</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
 </head>
 <body>
 
-  <button id="toggle-sidebar">☰ Sommaire</button>
+<div id="sidebar" class="sidebar">
+  <h3>SOMMAIRE</h3>
+  <ul>
+    <li><a href="../home.html">Accueil</a></li>
+    <li><a href="module1.html">Documents applicables</a></li>
+    <li><a href="module2.html" class="active">Module 2</a></li>
+  </ul>
+</div>
 
-  <div id="sidebar" class="sidebar">
-    <h3>Modules</h3>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
-    </ul>
+<div id="app" style="display:block;">
+  <div class="app-container">
+    <h1>Module 2</h1>
+    <p>Contenu du module 2...</p>
+    <button onclick="window.location.href='../home.html'">Retour à l'accueil</button>
   </div>
 
-  <h1>Module 2</h1>
-  <p>Contenu du module 2...</p>
-  <button onclick="window.location.href='index.html'">Retour à l'accueil</button>
+  <button class="logout-btn" onclick="window.location.href='../index.html'">Déconnexion</button>
+</div>
 
 </body>
 </html>

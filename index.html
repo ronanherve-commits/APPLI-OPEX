@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guide Installateur</title>
+  <title>Guide Installateur - Connexion</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -21,42 +21,7 @@
   <h2>Connexion</h2>
   <input type="email" id="email" placeholder="Email">
   <input type="password" id="password" placeholder="Mot de passe">
-  <button onclick="login()">Se connecter</button>
+  <button onclick="window.location.href='home.html'">Se connecter</button>
 </div>
-
-<!-- ÉCRAN D’ACCUEIL APRÈS CONNEXION -->
-<div id="app" style="display:none;">
-  <!-- Sidebar fixe -->
-  <div id="sidebar" class="sidebar">
-    <h3>SOMMAIRE</h3>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="pages/module1.html">Module 1</a></li>
-      <li><a href="pages/module2.html">Module 2</a></li>
-    </ul>
-  </div>
-
-  <!-- Contenu principal -->
-  <div class="app-container">
-    <h1>GUIDE INSTALLATEUR / METTEUR EN ROUTE</h1>
-  </div>
-
-  <!-- Bouton Déconnexion -->
-  <button class="logout-btn" onclick="logout()">Déconnexion</button>
-
-  <!-- Bandeau bas -->
-  <div class="banner-container">
-    <img src="images/fond-acceuil.jpg" alt="Bandeau" class="banner-image">
-  </div>
-</div>
-
-<!-- Service Worker -->
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-    .then(reg => console.log('Service Worker: Registered', reg))
-    .catch(err => console.log('Service Worker: Error', err));
-}
-</script>
 </body>
 </html>
