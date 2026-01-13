@@ -6,6 +6,59 @@
   <title>Documents applicables</title>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/app.js" defer></script>
+
+  <style>
+    /* ===== LISTE DOCUMENTS AMÉLIORÉE ===== */
+    .documents-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 20px;
+    }
+
+    .documents-list li {
+      margin-bottom: 15px;
+      background-color: rgba(255,255,255,0.05);
+      padding: 12px 15px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .documents-list li a {
+      font-size: 18px;
+      color: #2196F3;
+      text-decoration: none;
+      display: block;
+    }
+
+    .documents-list li:hover {
+      background-color: #3399ff;
+    }
+
+    .documents-list li:hover a {
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+
+    /* Décalage contenu par rapport à la sidebar */
+    #app .app-container {
+      margin-left: 220px; /* décalage pour ne pas chevaucher la sidebar */
+      padding: 40px 30px;
+      max-width: 900px;
+      background-color: rgba(51,153,255,0.15);
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    #app .app-container h1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,24 +73,26 @@
   </div>
 
   <!-- Contenu principal -->
-  <div class="app-container">
-    <h1>Documents applicables</h1>
-    <ul class="documents-list">
-      <li><a href="../docs-chantier/01-Fiche QR Codes.pdf" target="_blank">01 - Fiche QR Codes</a></li>
-      <li><a href="../docs-chantier/02-PROCES VERBAL DE RECEPTION DE TRAVAUX V6.pdf" target="_blank">02 - Procès verbal de réception de travaux V6</a></li>
-      <li><a href="../docs-chantier/03-CheckList-FindeMontageCâblage_indA.pdf" target="_blank">03 - CheckList Fin de Montage/Câblage</a></li>
-      <li><a href="../docs-chantier/04-CheckList-FinDeSemaineDeChantier.pdf" target="_blank">04 - CheckList Fin de semaine de chantier</a></li>
-      <li><a href="../docs-chantier/05-Feuille d'intervention-V1- à signé par le client.pdf" target="_blank">05 - Feuille d’intervention à signer par le client</a></li>
-      <li><a href="../docs-chantier/06-Feuille sous-traitant-V1.pdf" target="_blank">06 - Feuille sous-traitant V1</a></li>
-      <li><a href="../docs-chantier/07-Formation Maintenance-V1.pdf" target="_blank">07 - Formation Maintenance V1</a></li>
-      <li><a href="../docs-chantier/08-Formation opérateurs-V1.pdf" target="_blank">08 - Formation opérateurs V1</a></li>
-      <li><a href="../docs-chantier/09-Forfait & Heures Supp-V17.pdf" target="_blank">09 - Forfait & Heures Supplémentaires V17</a></li>
-      <li><a href="../docs-chantier/10-ORDRE DE MISSION V3.pdf" target="_blank">10 - Ordre de mission V3</a></li>
-    </ul>
-  </div>
+  <div id="app" style="display:block;">
+    <div class="app-container">
+      <h1>Documents applicables</h1>
+      <ul class="documents-list">
+        <li><a href="../docs-chantier/01-Fiche QR Codes.pdf" target="_blank">01 - Fiche QR Codes</a></li>
+        <li><a href="../docs-chantier/02-PROCES VERBAL DE RECEPTION DE TRAVAUX V6.pdf" target="_blank">02 - Procès verbal de réception de travaux V6</a></li>
+        <li><a href="../docs-chantier/03-CheckList-FindeMontageCâblage_indA.pdf" target="_blank">03 - CheckList Fin de Montage/Câblage</a></li>
+        <li><a href="../docs-chantier/04-CheckList-FinDeSemaineDeChantier.pdf" target="_blank">04 - CheckList Fin de semaine de chantier</a></li>
+        <li><a href="../docs-chantier/05-Feuille d'intervention-V1- à signé par le client.pdf" target="_blank">05 - Feuille d’intervention à signer par le client</a></li>
+        <li><a href="../docs-chantier/06-Feuille sous-traitant-V1.pdf" target="_blank">06 - Feuille sous-traitant V1</a></li>
+        <li><a href="../docs-chantier/07-Formation Maintenance-V1.pdf" target="_blank">07 - Formation Maintenance V1</a></li>
+        <li><a href="../docs-chantier/08-Formation opérateurs-V1.pdf" target="_blank">08 - Formation opérateurs V1</a></li>
+        <li><a href="../docs-chantier/09-Forfait & Heures Supp-V17.pdf" target="_blank">09 - Forfait & Heures Supplémentaires V17</a></li>
+        <li><a href="../docs-chantier/10-ORDRE DE MISSION V3.pdf" target="_blank">10 - Ordre de mission V3</a></li>
+      </ul>
+    </div>
 
-  <!-- Bouton Déconnexion -->
-  <button class="logout-btn" onclick="logout()">Déconnexion</button>
+    <!-- Bouton Déconnexion -->
+    <button class="logout-btn" onclick="logout()">Déconnexion</button>
+  </div>
 
 </body>
 </html>
